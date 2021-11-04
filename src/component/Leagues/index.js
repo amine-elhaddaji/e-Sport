@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
-import { Card, Button } from "react-bootstrap";
+import { Card, Button, CardGroup } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import { Pagination } from "antd";
 import { Context } from "../Context";
@@ -77,26 +77,28 @@ const Leagues = () => {
     <>
       <div>
         <h1> Leagues</h1>
+        <CardGroup>
+          {state.data.map((league) => (
+            <Card
+              className="league-card"
+              key={league.id}
+              style={{ width: "18rem" }}
+              onClick={() => push(`/leagues/${league.id}`)}
+            >
+              <Card.Img variant="top" src={league.image_url} />
+              <Card.Body>
+                <Card.Title>{league.name}</Card.Title>
 
-        {state.data.map((league) => (
-          <Card
-            key={league.id}
-            style={{ width: "18rem" }}
-            onClick={() => push(`/leagues/${league.id}`)}
-          >
-            <Card.Img variant="top" src={league.image_url} />
-            <Card.Body>
-              <Card.Title>{league.name}</Card.Title>
-
-              <Button
-                variant="primary"
-                onClick={() => push(`/leagues/${league.id}`)}
-              >
-                Details
-              </Button>
-            </Card.Body>
-          </Card>
-        ))}
+                <Button
+                  variant="primary"
+                  onClick={() => push(`/leagues/${league.id}`)}
+                >
+                  Details
+                </Button>
+              </Card.Body>
+            </Card>
+          ))}
+        </CardGroup>
         <Pagination
           total={state.total}
           current={page}

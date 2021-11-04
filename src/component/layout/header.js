@@ -23,9 +23,8 @@ const _nav = () => {
               class="form-select"
               aria-label="Default select example"
             >
-              <option selected>Open this select menu</option>
-              <option key="allGames" value="allGames">
-                ALL GAMES
+              <option selected key="allGames" value="allGames">
+                ALL
               </option>
               <option key="csgo" value="csgo">
                 CS-GO

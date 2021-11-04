@@ -9,7 +9,7 @@
 
 /* =========================== */
 
-.footer {
+/* .footer {
   display: flex;
   justify-content: center;
   width: 100%;
@@ -20,7 +20,7 @@
 .footer h1 {
   color: white;
   font-family: Georgia, "Times New Roman", Times, serif;
-}
+} */
 
 .contenu {
   display: flex;
@@ -30,6 +30,36 @@
   bottom: 50%;
 }
 
+/*================================= */
+
+.card {
+  margin: 0 auto;
+  float: none;
+  margin-bottom: 10px;
+}
+
+.card-body {
+  flex: 1 1 auto;
+  padding: 1rem 1rem;
+  justify-content: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.card-img-top {
+  padding-top: 13px;
+  height: 6cm;
+  margin-bottom: 5px;
+}
+
+.ant-pagination {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  margin-top: 20px;
+}
 /* =========================== */
 
 @media (prefers-reduced-motion: no-preference) {
