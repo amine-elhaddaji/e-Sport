@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Leagues from "./component/Leagues";
+import Teams from "./component/Teams";
+import League from "./component/League";
+import Team from "./component/Team";
+
+import _nav from "./component/layout/header";
+import _footer from "./component/layout/footer";
+import Layout from "./component/layout";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <BrowserRouter>
+        <Switch>
+          <Route path="/" exact component={Leagues} />
+          <Route path="/teams" exact component={Teams} />
+          <Route path="/leagues/:id" exact component={League} />
+          <Route path="/teams/:id" exact component={Team} />
+        </Switch>
+      </BrowserRouter>
+    </>
   );
 }
 
-export default App;
+export default Layout(App);

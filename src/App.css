@@ -7,6 +7,31 @@
   pointer-events: none;
 }
 
+/* =========================== */
+
+.footer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: black;
+  position: absolute;
+  top: 100%;
+}
+.footer h1 {
+  color: white;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.contenu {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  position: absolute;
+  bottom: 50%;
+}
+
+/* =========================== */
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
