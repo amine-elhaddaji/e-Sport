@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
-import { Card, Button } from "react-bootstrap";
+import { Card, Button, CardGroup } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import { Pagination } from "antd";
 import { Context } from "../Context";
@@ -79,23 +79,25 @@ const Teams = () => {
         <h1> Teams</h1>
 
         {state.data.map((team) => (
-          <Card
-            key={team.id}
-            style={{ width: "18rem" }}
-            onClick={() => push(`/teams/${team.id}`)}
-          >
-            <Card.Img variant="top" src={team.image_url} />
-            <Card.Body>
-              <Card.Title>{team.name}</Card.Title>
+          <CardGroup>
+            <Card
+              key={team.id}
+              style={{ width: "18rem" }}
+              onClick={() => push(`/teams/${team.id}`)}
+            >
+              <Card.Img variant="top" src={team.image_url} />
+              <Card.Body>
+                <Card.Title>{team.name}</Card.Title>
 
-              <Button
-                variant="primary"
-                onClick={() => push(`/teams/${team.id}`)}
-              >
-                Details
-              </Button>
-            </Card.Body>
-          </Card>
+                <Button
+                  variant="primary"
+                  onClick={() => push(`/teams/${team.id}`)}
+                >
+                  Details
+                </Button>
+              </Card.Body>
+            </Card>
+          </CardGroup>
         ))}
 
         <Pagination

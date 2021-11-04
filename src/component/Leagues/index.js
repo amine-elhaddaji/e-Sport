@@ -80,7 +80,6 @@ const Leagues = () => {
         <CardGroup>
           {state.data.map((league) => (
             <Card
-              className="league-card"
               key={league.id}
               style={{ width: "18rem" }}
               onClick={() => push(`/leagues/${league.id}`)}
