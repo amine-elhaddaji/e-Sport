@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Context } from "../Context";
 import { Nav, Navbar, Container, NavDropdown } from "react-bootstrap";
+import logo from "../../images/logo192.png";
 
 const _nav = () => {
   const { game, onSetGame } = useContext(Context);
@@ -8,7 +9,10 @@ const _nav = () => {
   return (
     <Navbar bg="dark" variant="dark">
       <Container>
-        <Navbar.Brand href="/"> E-Sport Ubo</Navbar.Brand>
+        <Navbar.Brand href="/">
+          {" "}
+          <img style={{ height: "0.8cm" }} src={logo} /> E-Sport Ubo
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">

@@ -1,13 +1,14 @@
 import React, { Component } from "react";
-import { Nav, Navbar, Container, NavDropdown } from "react-bootstrap";
 
 import Header from "./header";
+import Footer from "./footer";
 
 const Layout = (Wrapped) => () =>
   (
     <>
       <Header />
       <Wrapped />
+      <Footer />
     </>
   );
 
