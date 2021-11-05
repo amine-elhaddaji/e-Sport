@@ -37,7 +37,11 @@ const Detail = () => {
           boxShadow: "rgba(0, 0, 0, 0.4) 3px 3px 3px 3px",
         }}
       >
-        <Card.Img variant="top" src={get(team, "image_url", img1)} />
+        <Card.Img
+          variant="top"
+          src={get(team, "image_url", "") ? get(team, "image_url", "") : img1}
+          style={{ height: "8cm" }}
+        />
         <Card.Body>
           <Card.Title>{team.name}</Card.Title>
           <Card.Text>

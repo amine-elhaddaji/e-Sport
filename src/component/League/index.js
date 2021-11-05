@@ -4,6 +4,7 @@ import { Card, Button } from "react-bootstrap";
 import moment from "moment";
 import get from "lodash/get";
 import isNil from "lodash/isNil";
+import im from "../../images/league.jpg";
 
 const Detail = () => {
   const { id } = useParams();
@@ -44,7 +45,11 @@ const Detail = () => {
           boxShadow: "rgba(0, 0, 0, 0.4) 3px 3px 3px 3px",
         }}
       >
-        <Card.Img variant="top" src={get(league, "image_url", "")} />
+        <Card.Img
+          variant="top"
+          src={get(league, "image_url", "") ? get(league, "image_url", "") : im}
+          style={{ height: "6cm" }}
+        />
         <Card.Body>
           <Card.Title>{league.name}</Card.Title>
           <Card.Text>
