@@ -15,6 +15,13 @@ h1 {
   height: 2cm;
   padding: 24px;
 }
+
+/* ================================= */
+
+.navi {
+  background-color: blue;
+}
+
 /* .body {
   background-color: rgb(234, 225, 225);
 } */

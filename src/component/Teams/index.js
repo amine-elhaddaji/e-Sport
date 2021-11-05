@@ -77,9 +77,8 @@ const Teams = () => {
     <>
       <div>
         <h1> Teams</h1>
-
-        {state.data.map((team) => (
-          <CardGroup>
+        <CardGroup>
+          {state.data.map((team) => (
             <Card
               key={team.id}
               style={{ width: "18rem" }}
@@ -97,9 +96,8 @@ const Teams = () => {
                 </Button>
               </Card.Body>
             </Card>
-          </CardGroup>
-        ))}
-
+          ))}
+        </CardGroup>
         <Pagination
           total={state.total}
           current={page}
