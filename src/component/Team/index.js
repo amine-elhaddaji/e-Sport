@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Card } from "react-bootstrap";
+import img1 from "../../images/gamerzone.png";
 
 import get from "lodash/get";
 
@@ -36,7 +37,7 @@ const Detail = () => {
           boxShadow: "rgba(0, 0, 0, 0.4) 3px 3px 3px 3px",
         }}
       >
-        <Card.Img variant="top" src={get(team, "image_url", "")} />
+        <Card.Img variant="top" src={get(team, "image_url", img1)} />
         <Card.Body>
           <Card.Title>{team.name}</Card.Title>
           <Card.Text>

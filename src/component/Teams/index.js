@@ -3,6 +3,7 @@ import { Card, Button, CardGroup } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import { Pagination } from "antd";
 import { Context } from "../Context";
+import img from "../../images/gamerzone.png";
 
 const parseResponse = {
   json: (response) => response.json(),
@@ -84,7 +85,10 @@ const Teams = () => {
               style={{ width: "18rem" }}
               onClick={() => push(`/teams/${team.id}`)}
             >
-              <Card.Img variant="top" src={team.image_url} />
+              <Card.Img
+                variant="top"
+                src={team.image_url ? team.image_url : img}
+              />
               <Card.Body>
                 <Card.Title>{team.name}</Card.Title>
 

@@ -3,6 +3,7 @@ import { Card, Button, CardGroup } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import { Pagination } from "antd";
 import { Context } from "../Context";
+import img from "../../images/league.jpg";
 
 const parseResponse = {
   json: (response) => response.json(),
@@ -84,7 +85,10 @@ const Leagues = () => {
               style={{ width: "18rem" }}
               onClick={() => push(`/leagues/${league.id}`)}
             >
-              <Card.Img variant="top" src={league.image_url} />
+              <Card.Img
+                variant="top"
+                src={league.image_url ? league.image_url : img}
+              />
               <Card.Body>
                 <Card.Title>{league.name}</Card.Title>
 
