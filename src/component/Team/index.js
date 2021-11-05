@@ -24,16 +24,31 @@ const Detail = () => {
       );
   }, []);
   return (
-    <Card key={get(team, "id", "")} style={{ width: "18rem" }}>
-      <Card.Img variant="top" src={get(team, "image_url", "")} />
-      <Card.Body>
-        <Card.Title>{team.name}</Card.Title>
-        <Card.Text>Game : {get(team, "current_videogame.name", "")}</Card.Text>
-        <Card.Text>
-          {get(team, "players", []).map((player) => player.name + " ")}
-        </Card.Text>
-      </Card.Body>
-    </Card>
+    <div style={{ display: "flex", justifyContent: "center" }}>
+      <Card
+        key={get(team, "id", "")}
+        style={{
+          width: "10cm",
+          height: "13cm",
+          position: "absolue",
+          bottom: "10%",
+          backgroundColor: "#00000029",
+          boxShadow: "rgba(0, 0, 0, 0.4) 3px 3px 3px 3px",
+        }}
+      >
+        <Card.Img variant="top" src={get(team, "image_url", "")} />
+        <Card.Body>
+          <Card.Title>{team.name}</Card.Title>
+          <Card.Text>
+            <strong>Game : </strong>
+            {get(team, "current_videogame.name", "")}
+          </Card.Text>
+          <Card.Text>
+            {get(team, "players", []).map((player) => player.name + " ")}
+          </Card.Text>
+        </Card.Body>
+      </Card>
+    </div>
   );
 };
 

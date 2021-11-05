@@ -26,27 +26,48 @@ const Detail = () => {
       );
   }, []);
   return (
-    <Card key={get(league, "id", "")} style={{ width: "18rem" }}>
-      <Card.Img variant="top" src={get(league, "image_url", "")} />
-      <Card.Body>
-        <Card.Title>{league.name}</Card.Title>
-        <Card.Text>
-          Game : {get(league, "videogame.name", "")}-
-          {get(league, "videogame.current_version", "")}
-        </Card.Text>
-        {get(league, "series", []).map((element) => (
+    <div
+      style={{
+        height: "100%",
+        display: "flex",
+        justifyContent: "center",
+      }}
+    >
+      <Card
+        key={get(league, "id", "")}
+        style={{
+          width: "10cm",
+          height: "13cm",
+          position: "absolue",
+          bottom: "10%",
+          backgroundColor: "#00000029",
+          boxShadow: "rgba(0, 0, 0, 0.4) 3px 3px 3px 3px",
+        }}
+      >
+        <Card.Img variant="top" src={get(league, "image_url", "")} />
+        <Card.Body>
+          <Card.Title>{league.name}</Card.Title>
           <Card.Text>
-            From {moment(element.begin_at).format("DD/MM/YYYY HH:MM")}-
-            {moment(element.end_at).format("DD/MM/YYYY HH:MM")}
-            {!isNil(element.winner_id) && (
-              <Button onClick={() => push(`/teams/${element.winner_id}`)}>
-                WINNER
-              </Button>
-            )}
+            <strong> Game : </strong> {get(league, "videogame.name", "")}-
+            {get(league, "videogame.current_version", "")}
           </Card.Text>
-        ))}
-      </Card.Body>
-    </Card>
+          {get(league, "series", []).map((element) => (
+            <Card.Text>
+              <strong>From : </strong>
+              {moment(element.begin_at).format("DD/MM/YYYY HH:MM")}
+              <br /> <strong>To : </strong>
+              {moment(element.end_at).format("DD/MM/YYYY HH:MM")}
+              <br />
+              {!isNil(element.winner_id) && (
+                <Button onClick={() => push(`/teams/${element.winner_id}`)}>
+                  WINNER
+                </Button>
+              )}
+            </Card.Text>
+          ))}
+        </Card.Body>
+      </Card>
+    </div>
   );
 };
 
