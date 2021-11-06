@@ -13,7 +13,12 @@ h1 {
   display: flex;
   justify-content: center;
   height: 2cm;
-  padding: 24px;
+  position: relative;
+  bottom: -1cm;
+}
+
+.carousel-indicators {
+  color: #61dafb;
 }
 
 /* ================================= */

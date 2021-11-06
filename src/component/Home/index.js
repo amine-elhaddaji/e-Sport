@@ -1,6 +1,6 @@
 import React from "react";
 import { Carousel } from "react-bootstrap";
-import { Nav } from "react-bootstrap";
+
 import { useHistory } from "react-router-dom";
 
 import leag from "../../images/e-league.png";
@@ -25,14 +25,17 @@ const Home = () => {
             justifyItems: "center",
           }}
         >
-          <Carousel.Item interval={3000} onClick={() => push(`/leagues`)}>
+          <Carousel.Item interval={3000}>
             <h1>Leagues</h1>
             <a href>
               {" "}
               <img
+                onClick={() => push(`/leagues`)}
                 style={{
+                  height: "5cm",
+
                   borderRadius: "1000px",
-                  bottom: "-1cm",
+                  bottom: "-22mm",
                   position: "relative",
                   backgroundColor: "#00000029",
                   boxShadow: "rgba(0, 0, 0, 0.4) 3px 3px 3px 3px",
@@ -44,17 +47,19 @@ const Home = () => {
             </a>
           </Carousel.Item>
 
-          <Carousel.Item interval={3000} onClick={() => push(`/teams`)}>
+          <Carousel.Item interval={3000}>
             <h1>Teams</h1>
             <img
+              onClick={() => push(`/teams`)}
               className="d-block w-100"
               src={tea}
               alt="Second slide"
               style={{
+                height: "5cm",
                 backgroundColor: "#00000029",
                 boxShadow: "rgba(0, 0, 0, 0.4) 3px 3px 3px 3px",
                 borderRadius: "1000px",
-                bottom: "-2cm",
+                bottom: "-2.2cm",
                 position: "relative",
               }}
             />
