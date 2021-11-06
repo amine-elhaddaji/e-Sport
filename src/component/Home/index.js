@@ -44,7 +44,7 @@ const Home = () => {
             </a>
           </Carousel.Item>
 
-          <Carousel.Item interval={100000} onClick={() => push(`/teams`)}>
+          <Carousel.Item interval={3000} onClick={() => push(`/teams`)}>
             <h1>Teams</h1>
             <img
               className="d-block w-100"
