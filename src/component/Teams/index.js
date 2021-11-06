@@ -93,6 +93,7 @@ const Teams = () => {
                 <Card.Title>{team.name}</Card.Title>
 
                 <Button
+                  class="btn btn-outline-dark"
                   variant="primary"
                   onClick={() => push(`/teams/${team.id}`)}
                 >

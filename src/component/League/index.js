@@ -64,7 +64,10 @@ const Detail = () => {
               {moment(element.end_at).format("DD/MM/YYYY HH:MM")}
               <br />
               {!isNil(element.winner_id) && (
-                <Button onClick={() => push(`/teams/${element.winner_id}`)}>
+                <Button
+                  class="btn btn-outline-dark"
+                  onClick={() => push(`/teams/${element.winner_id}`)}
+                >
                   WINNER
                 </Button>
               )}

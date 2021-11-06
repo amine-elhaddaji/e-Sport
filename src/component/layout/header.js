@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Context } from "../Context";
-import { Nav, Navbar, Container, NavDropdown } from "react-bootstrap";
+import { Nav, Navbar, Container } from "react-bootstrap";
 import logo from "../../images/logo192.png";
 
 const _nav = () => {
@@ -11,12 +11,12 @@ const _nav = () => {
       <Container>
         <Navbar.Brand href="/">
           {" "}
-          <img style={{ height: "0.8cm" }} src={logo} /> E-Sport Ubo
+          <img style={{ height: "0.6cm" }} src={logo} /> E-Sport Ubo
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="/">Leagues</Nav.Link>
+            <Nav.Link href="/leagues">Leagues</Nav.Link>
             <Nav.Link href="/teams">Teams</Nav.Link>
             <select
               defaultValue={game}
