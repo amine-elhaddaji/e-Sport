@@ -18,12 +18,13 @@ function App() {
       <BrowserRouter>
         <Switch>
           <Route path="/" exact component={Home} />
-          <Route path="*" exact component={Error} />
+
           <Route path="/leagues" exact component={Leagues} />
 
           <Route path="/teams" exact component={Teams} />
           <Route path="/leagues/:id" exact component={League} />
           <Route path="/teams/:id" exact component={Team} />
+          <Route path="*" component={Error} />
         </Switch>
       </BrowserRouter>
     </>
