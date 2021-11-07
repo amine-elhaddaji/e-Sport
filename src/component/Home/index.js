@@ -1,8 +1,6 @@
 import React from "react";
 import { Carousel } from "react-bootstrap";
-
 import { useHistory } from "react-router-dom";
-
 import leag from "../../images/e-league.png";
 import tea from "../../images/e-team.jpg";
 

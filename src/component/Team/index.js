@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { Card } from "react-bootstrap";
+import { Card, DropdownButton, Dropdown } from "react-bootstrap";
 import img1 from "../../images/gamerzone.png";
 
 import get from "lodash/get";
@@ -48,9 +48,20 @@ const Detail = () => {
             <strong>Game : </strong>
             {get(team, "current_videogame.name", "")}
           </Card.Text>
-          <Card.Text>
-            {get(team, "players", []).map((player) => player.name + " ")}
-          </Card.Text>
+
+          <DropdownButton
+            id="dropdown-basic-button"
+            title="Players"
+            variant="outline-success"
+          >
+            {get(team, "players", []).map((player) => (
+              <Dropdown.Item
+                style={{ display: "flex", justifyContent: "center" }}
+              >
+                {player.name}
+              </Dropdown.Item>
+            ))}
+          </DropdownButton>
         </Card.Body>
       </Card>
     </div>

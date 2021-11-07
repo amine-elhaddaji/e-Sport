@@ -94,7 +94,7 @@ const Leagues = () => {
 
                 <Button
                   class="btn btn-outline-dark"
-                  variant="primary"
+                  variant="outline-dark"
                   onClick={() => push(`/leagues/${league.id}`)}
                 >
                   Details

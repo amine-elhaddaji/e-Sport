@@ -7,7 +7,6 @@ import League from "./component/League";
 import Team from "./component/Team";
 import Home from "./component/Home";
 import Error from "./component/Error";
-
 import _nav from "./component/layout/header";
 import _footer from "./component/layout/footer";
 import Layout from "./component/layout";
@@ -18,9 +17,7 @@ function App() {
       <BrowserRouter>
         <Switch>
           <Route path="/" exact component={Home} />
-
           <Route path="/leagues" exact component={Leagues} />
-
           <Route path="/teams" exact component={Teams} />
           <Route path="/leagues/:id" exact component={League} />
           <Route path="/teams/:id" exact component={Team} />

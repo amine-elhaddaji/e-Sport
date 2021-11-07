@@ -1,6 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useHistory } from "react-router-dom";
-import { Card, Button } from "react-bootstrap";
+import {
+  Card,
+  Button,
+  ListGroup,
+  DropdownButton,
+  Dropdown,
+} from "react-bootstrap";
 import moment from "moment";
 import get from "lodash/get";
 import isNil from "lodash/isNil";
@@ -56,23 +62,46 @@ const Detail = () => {
             <strong> Game : </strong> {get(league, "videogame.name", "")}-
             {get(league, "videogame.current_version", "")}
           </Card.Text>
-          {get(league, "series", []).map((element) => (
-            <Card.Text>
-              <strong>From : </strong>
-              {moment(element.begin_at).format("DD/MM/YYYY HH:MM")}
-              <br /> <strong>To : </strong>
-              {moment(element.end_at).format("DD/MM/YYYY HH:MM")}
-              <br />
-              {!isNil(element.winner_id) && (
+
+          <DropdownButton
+            id="dropdown-basic-button"
+            title="Date of Leagues"
+            variant="outline-dark"
+            width="3cm"
+            style={{ margin: "auto" }}
+          >
+            {get(league, "series", []).map((element) => (
+              <Dropdown.Item
+                style={{ display: "flex", justifyContent: "center" }}
+              >
+                <strong>From : </strong>
+                {moment(element.begin_at).format("DD/MM/YYYY HH:MM")}
+                <br /> <strong>To : </strong>
+                {moment(element.end_at).format("DD/MM/YYYY HH:MM")}
+                <br />
+              </Dropdown.Item>
+            ))}
+          </DropdownButton>
+
+          <DropdownButton
+            id="dropdown-basic-button"
+            title="Winners"
+            variant="outline-success"
+          >
+            {get(league, "series", []).map((element) => (
+              <Dropdown.Item
+                style={{ display: "flex", justifyContent: "center" }}
+              >
                 <Button
                   class="btn btn-outline-dark"
+                  variant="outline-success"
                   onClick={() => push(`/teams/${element.winner_id}`)}
                 >
-                  WINNER
+                  {element.full_name}
                 </Button>
-              )}
-            </Card.Text>
-          ))}
+              </Dropdown.Item>
+            ))}
+          </DropdownButton>
         </Card.Body>
       </Card>
     </div>

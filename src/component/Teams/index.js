@@ -94,7 +94,7 @@ const Teams = () => {
 
                 <Button
                   class="btn btn-outline-dark"
-                  variant="primary"
+                  variant="outline-dark"
                   onClick={() => push(`/teams/${team.id}`)}
                 >
                   Details
