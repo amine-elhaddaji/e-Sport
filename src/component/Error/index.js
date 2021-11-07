@@ -9,11 +9,12 @@ const Error = () => {
       <Card
         style={{
           width: "10cm",
-          height: "13cm",
+          height: "8cm",
           position: "absolue",
           bottom: "10%",
           backgroundColor: "#00000029",
           boxShadow: "rgba(0, 0, 0, 0.4) 3px 3px 3px 3px",
+          marginBottom: "5cm",
         }}
       >
         <Card.Body>
@@ -24,13 +25,16 @@ const Error = () => {
           </Card.Title>
 
           <Card.Text>
-            <p style={{ color: "#bf2c2c", marginTop: "-30px" }}>
-              Cette page n'est pas accesible !
-            </p>
+            <strong>
+              <p style={{ color: "#bf2c2c", marginTop: "-30px" }}>
+                Cette page n'est pas accesible !
+              </p>
+            </strong>
           </Card.Text>
+
           <Button
             class="btn btn-outline-dark"
-            variant="primary"
+            variant="outline-danger"
             onClick={() => push(`/`)}
           >
             Go to Home Page

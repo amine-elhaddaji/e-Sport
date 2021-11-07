@@ -11,7 +11,7 @@ const _nav = () => {
       <Container>
         <Navbar.Brand href="/">
           {" "}
-          <img style={{ height: "0.6cm" }} src={logo} /> E-Sport Ubo
+          <img style={{ height: "0.6cm" }} src={logo} alt="logo" /> E-Sport Ubo
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
